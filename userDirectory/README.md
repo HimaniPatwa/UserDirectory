@@ -4,6 +4,7 @@ This is a Maven Spring Boot project. It runs with Apache Tomcat Server.
 
 This application stores data in MySQL database server. The database has two tables named User and Phone. Reference of User's primary key
 i.e. User id is used in Phone table as Foreign Key.
+
 ------------------
 ## DataBase Schema user_directory
 
@@ -56,43 +57,43 @@ CREATE TABLE `user_directory`.`user` (
 
 --------------------------
  
-Application supports following tasks with their APIs and params
+Application supports following tasks with their APIs and params  
 ## 1)  Add a user to the system      
-API: [POST]    localhost:port/cisco/adduser
-name = John
-password = 12345
-email = john@xyz
-phonename = john's phone
-phonemodel = android
-phonenumber = +32 67754537
-preferredphonenumber = yes
+API: [POST]    localhost:port/cisco/adduser  
+name = John  
+password = 12345  
+email = john@xyz  
+phonename = john's phone  
+phonemodel = android  
+phonenumber = +32 67754537  
+preferredphonenumber = yes  
 
 ## 2)  Delete a user from the system
-API: [DELETE] localhost:port/cisco/delete 
+API: [DELETE] localhost:port/cisco/delete   
 userId = 1
 
 ## 3)  List users in the system
 API: [GET]  localhost:8090/cisco/user
 
 ## 4)  Add a phone to a user
-API: [POST] localhost:port/cisco/addphone
-phonemodel=android
-phonename=Jame's phone
-phonenumber=+91 34556760
-userid=1
-preferredphonenumber=1
+API: [POST] localhost:port/cisco/addphone  
+phonemodel=android   
+phonename=Jame's phone  
+phonenumber=+91 34556760  
+userid=1  
+preferredphonenumber=1  
 
 ## 5)  Delete a user's phone
-API: [DELETE]  localhost:port/cisco/deletephone
-phonenumber=+91 34556760
+API: [DELETE]  localhost:port/cisco/deletephone  
+phonenumber=+91 34556760  
 
 ## 6)  List a user's phones
-API: [GET] localhost:port/cisco/listphones
-userid=2
+API: [GET] localhost:port/cisco/listphones  
+userid=2  
 
 ## 7)  Update a user's preferred phone number   
-API: [PUT] localhost:8090/cisco/updatepreferredphonenumber
-userid=2
-phonenumber=+9189612344
+API: [PUT] localhost:8090/cisco/updatepreferredphonenumber  
+userid=2    
+phonenumber=+9189612344    
 
  Unit Test cases are written in TestNG
