@@ -12,47 +12,46 @@ CREATE SCHEMA `user_directory` ;
 
 Following is both tables' description
 
-Table : User
-Columns     Data Types    Constraints
-userid      long		  Primary Key , Auto Incremental
-username    varchar(40)	
-emailid		varchar(40)
-password    varchar(40)
+Table : User  
+Columns     Data Types    Constraints  
+userid      long		  Primary Key , Auto Incremental  
+username    varchar(40)	  
+emailid		varchar(40)  
+password    varchar(40)  
 
 
-Table : Phone
-Columns      		      Data Types      Constraints
-phoneid		 	 	      long		    Primary Key , Auto Incremental
-phonename			      varchar(40)
-phonemodel 	  	 	      varchar(40)
-preferredphonenumber	  TinyInt		NOT NULL
-phonenumber				  varchar(15)	NOT NULL,Unique
-userid					  int			NOT NULL, Foreign Key          CASCADE ON Delete
-
-CREATE TABLE `user_directory`.`user` (
-  `userid` VARCHAR(36) NOT NULL,
-  `username` VARCHAR(45) NOT NULL,
-  `password` VARCHAR(45) NULL,
-  `emailid` VARCHAR(45) NULL,
-  PRIMARY KEY (`userid`));
+Table : Phone  
+Columns      		      Data Types      Constraints  
+phoneid		 	 	      long		    Primary Key , Auto Incremental  
+phonename			      varchar(40)  
+phonemodel 	  	 	      varchar(40)  
+preferredphonenumber	  TinyInt		NOT NULL  
+phonenumber				  varchar(15)	NOT NULL,Unique  
+userid					  int			NOT NULL, Foreign Key          CASCADE ON Delete  
+ 
+CREATE TABLE `user_directory`.`user` (  
+  `userid` VARCHAR(36) NOT NULL,  
+  `username` VARCHAR(45) NOT NULL,  
+  `password` VARCHAR(45) NULL,  
+  `emailid` VARCHAR(45) NULL,  
+  PRIMARY KEY (`userid`));  
+   
   
-  
-  
-  CREATE TABLE `user_directory`.`phone` (
-  `phoneid` VARCHAR(36) NOT NULL,
-  `phonename` VARCHAR(45) NULL,
-  `phonemodel` VARCHAR(45) NULL,
-  `preferredphonenumber` TINYINT NOT NULL DEFAULT 0,
-  `phonenumber` VARCHAR(15) NOT NULL,
-  `userid` VARCHAR(36) NOT NULL,
-  PRIMARY KEY (`phoneid`),
-  INDEX `userid_idx` (`userid` ASC) VISIBLE,
-  UNIQUE INDEX `phonenumber_UNIQUE` (`phonenumber` ASC) VISIBLE,
-  CONSTRAINT `userid`
-    FOREIGN KEY (`userid`)
-    REFERENCES `user_directory`.`user` (`userid`)
-    ON DELETE CASCADE
-    ON UPDATE NO ACTION);
+  CREATE TABLE `user_directory`.`phone` (  
+  `phoneid` VARCHAR(36) NOT NULL,  
+  `phonename` VARCHAR(45) NULL,  
+  `phonemodel` VARCHAR(45) NULL,  
+  `preferredphonenumber` TINYINT NOT NULL DEFAULT 0,  
+  `phonenumber` VARCHAR(15) NOT NULL,  
+  `userid` VARCHAR(36) NOT NULL,  
+  PRIMARY KEY (`phoneid`),  
+  INDEX `userid_idx` (`userid` ASC) VISIBLE,  
+  UNIQUE INDEX `phonenumber_UNIQUE` (`phonenumber` ASC) VISIBLE,  
+  CONSTRAINT `userid`  
+    FOREIGN KEY (`userid`)  
+    REFERENCES `user_directory`.`user` (`userid`)  
+    ON DELETE CASCADE  
+    ON UPDATE NO ACTION);  
     
 
 --------------------------
