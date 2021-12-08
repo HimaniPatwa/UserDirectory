@@ -26,7 +26,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Phone implements Serializable {
+public class Phone {
 
 //	@Id
 //	@GeneratedValue(strategy = GenerationType.IDENTITY)
